@@ -1,6 +1,6 @@
 <!--
  * @Author: luoxi
- * @LastEditTime: 2022-03-02 22:36:24
+ * @LastEditTime: 2022-03-03 22:41:49
  * @LastEditors: your name
  * @Description: 
 -->
@@ -20,7 +20,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from "vue";
+import { defineComponent, ref, watch } from "vue";
+import useClickOutside from "../../hooks/useClickOutside";
 
 export default defineComponent({
   name: "Dropdown",
@@ -35,9 +36,17 @@ export default defineComponent({
     const toggleOpen = () => {
       isOpen.value = !isOpen.value;
     };
+    const dropdownRef = ref<null | HTMLElement>(null);
+    const isClickOutside = useClickOutside(dropdownRef);
+    watch(isClickOutside, () => {
+      if (isOpen.value && isClickOutside.value) {
+        isOpen.value = false;
+      }
+    });
     return {
       isOpen,
       toggleOpen,
+      dropdownRef,
     };
   },
 });

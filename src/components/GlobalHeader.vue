@@ -1,6 +1,6 @@
 <!--
  * @Author: luoxi
- * @LastEditTime: 2022-03-02 22:43:05
+ * @LastEditTime: 2022-03-03 22:45:37
  * @LastEditors: your name
  * @Description: 头部导航栏
 -->
@@ -54,5 +54,5 @@ export default defineComponent({
 });
 </script>
 
-<style>
+<style scoped>
 </style>

@@ -1,6 +1,6 @@
 <!--
  * @Author: luoxi
- * @LastEditTime: 2022-03-02 22:50:04
+ * @LastEditTime: 2022-03-03 22:47:51
  * @LastEditors: your name
  * @Description: 
 -->
@@ -23,18 +23,22 @@ export default defineComponent({
   },
   setup() {
     const isOpen = ref(false);
-    const toggleOpen = () => {
-      isOpen.value = !isOpen.value;
-    };
+    // const toggleOpen = () => {
+    //   isOpen.value = !isOpen.value;
+    // };
     return {};
   },
 });
 </script>
 
 <style >
+.dropdownitem-container {
+  cursor: pointer;
+}
 .dropdownitem-container.is-disabled .slot * {
   color: #6c757d;
   pointer-events: none;
+  cursor: not-allowed;
   background-color: transparent;
 }
 </style>
